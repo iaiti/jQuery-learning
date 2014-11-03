@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+<!--we can use the direcotry of the jquery.js file,
+	we also can put the file into the directory of the project
+ -->
+<script src="file:///e:/jquery/jquery.js">
+</script>
+<script >
+
+//show the complete directory
+alert(window.document.location.href);
+
+//显示  隐藏  可以不传时间参数
+//$(selector).hide(speed,callback);
+//$(selector).show(speed,callback);
+//hide和show可以传入时间参数  毫秒   然后两个button按了之后是会不停地弹来弹去 不停地弹的
+//这是有趣所在 也是缺点所在
+//toggle可以直接进行切换 隐藏显示  显示隐藏
+
+/*
+  $("p").fadeIn(5000);  fadeIn淡入 慢慢隐藏  fadeOut 慢慢淡出
+ fadeToggle 上面两者的切换  不只是毫秒数  其实有fast slow这样的参数也可以传入
+ */
+
+$(document).ready(function(){
+	//$("#hide").click(function(){
+	//	$("p").show();
+	//});
+	
+	$("#hide").click(function(){
+		$("p").fadeIn(5000);
+	});
+});
+$(document).ready(function(){
+	$("#show").click(function(){
+		$("p").fadeOut(5000);
+	});
+});
+</script>
+
+</head>
+<body>
+<p id="p1">  i am here!
+</p>
+<button id="show" >show</button>
+<button id="hide" >hide</button>
+</body>
+</html>
